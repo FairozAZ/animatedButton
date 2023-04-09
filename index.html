@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .main-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 1200px;
+            background-color: whitesmoke;
+            border: 3px solid gray;
+            padding: 50px 0 100px;
+            gap: 40px;
+            margin: 50px auto;
+            border-radius: 5px;
+        }
+
+        .main-container h2{
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: black;
+        }
+
+        .btn-cont{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .btn-cont button{
+            border: none;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-align: center;
+            cursor: pointer;
+            background-color: black;
+        }
+
+        .button {
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 12px #222020e5;
+        }
+
+        .button:hover {background-color: #3e8e41}
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 8px #222020e5;
+            transform: translateY(4px);
+        }
+
+        .button1 {
+            border-radius: 4px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+        }
+
+        .button1 span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button1 span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button1:hover span {padding-right: 25px;}
+
+        .button1:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .button2 {
+            position: relative;
+            padding: 20px;
+            width: 200px;
+            transition-duration: 0.4s;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .button2:after {
+            content: "";
+            background: #90EE90;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px!important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s;
+        }
+
+        .button2:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h2>Animated Button using HTML and CSS</h2>
+        <div class="btn-cont">
+            <button class="button">Click Me</button>
+            <button class="button1"><span>Hover </span></button>
+            <button class="button2">Click Me</button>
+        </div>
+    </div>
+</body>
+</html>
